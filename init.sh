@@ -14,19 +14,19 @@ mv grpc@v1.26.0 $FIG4_SRC_DIR/
 
 echo "init Fig.6 & Fig.7 files"
 cd $CUR_DIR/Source
-FIG7_SRC_DIR=/home/qzhao24/projects/DrCCTProf-ARM-samples/lulesh
-if [ -d $FIG7_SRC_DIR ]; then
-    rm -rf $FIG7_SRC_DIR
+FIG6_SRC_DIR=/home/qzhao24/projects/DrCCTProf-ARM-samples/lulesh
+if [ -d $FIG6_SRC_DIR ]; then
+    rm -rf $FIG6_SRC_DIR
 fi
-mkdir $FIG7_SRC_DIR
+mkdir $FIG6_SRC_DIR
 tar -jxvf lulesh.tar.bz2
-mv lulesh $FIG7_SRC_DIR/
+mv lulesh $FIG6_SRC_DIR/
 
 echo "init data converter experiment"
 cd $CUR_DIR/Source
-FIG6_SRC_DIR=$CUR_DIR/Source/hpctoolkit-lulesh-par-original-database
-if [ -d $FIG6_SRC_DIR ]; then
-    rm -rf $FIG6_SRC_DIR
+CONVERTER_PATH=$CUR_DIR/Source/hpctoolkit-lulesh-par-original-database
+if [ -d $CONVERTER_PATH ]; then
+    rm -rf $CONVERTER_PATH
 fi
 tar -jxvf hpctoolkit-lulesh-par-original-database.tar.bz2
 
@@ -37,7 +37,7 @@ fi
 git clone https://github.com/Xuhpclab/drcctprof-databuilder.git
 cd $CUR_DIR/Source/drcctprof-databuilder
 ./install.sh
-./hpctoolkit-converter.py $CUR_DIR/Source/hpctoolkit-lulesh-par-original-database lulesh.hpctoolkit.drcctprof
+./hpctoolkit-converter.py $CONVERTER_PATH lulesh.hpctoolkit.drcctprof
 mv lulesh.hpctoolkit.drcctprof $CUR_DIR/Profiles/data_converter.demo.ezview
 
 echo "init overhead experiment"
