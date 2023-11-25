@@ -8,7 +8,7 @@ FIG4_SRC_DIR=/home/qzhao24/go/pkg/mod/google.golang.org
 if [ -d $FIG4_SRC_DIR ]; then
     rm -rf $FIG4_SRC_DIR
 fi
-mkdir $FIG4_SRC_DIR
+mkdir -p $FIG4_SRC_DIR
 tar -jxvf grpc.tar.bz2
 mv grpc@v1.26.0 $FIG4_SRC_DIR/
 
@@ -18,7 +18,7 @@ FIG6_SRC_DIR=/home/qzhao24/projects/DrCCTProf-ARM-samples/lulesh
 if [ -d $FIG6_SRC_DIR ]; then
     rm -rf $FIG6_SRC_DIR
 fi
-mkdir $FIG6_SRC_DIR
+mkdir -p $FIG6_SRC_DIR
 tar -jxvf lulesh.tar.bz2
 mv lulesh $FIG6_SRC_DIR/
 
@@ -45,8 +45,3 @@ cd $CUR_DIR/Overhead
 tar -jxvf 1MB.profile.tar.bz2
 tar -jxvf 100MB.profile.tar.bz2
 tar -jxvf 1GB.profile.tar.bz2
-
-
-
-
-
